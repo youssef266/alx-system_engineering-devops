@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -ap1 | grep -v '^\.$' | grep -v '^\.\.$' | sed -e 's/[^0-9a-zA-Z]/_/g' | LC_COLLATE=C sort -d | sed -e 's/_/ /g' -e 's/$/\//'
+ls -map
