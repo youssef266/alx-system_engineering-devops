@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Fixes this container so that Nginx is running as the nginx user.
+# The service must be listening on all active IPs on port 8080
+# The service must be running as the nginx user
+# The service must not be running as root or any other user
+# The service must be accessible to the user and the user must be able to view the /etc/nginx/nginx.conf
+# The service must be accessible to the user and the user must be able to list
+# the contents of /etc/nginx/sites-enabled
+
+chown nginx:nginx /etc/nginx
+chmod 644 /etc/nginx/nginx.conf
+sed -i 's/\(listen \(\[::]:\)\?\)80/\18080/g' /etc/nginx/sites-enabled/default
+pkill apache2
+sudo -u nginx service nginx restart
