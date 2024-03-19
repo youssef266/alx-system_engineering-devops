@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# script that accepts one argument and runs whoami command under the user passed as an argument
+# This script is used to change the user to someone else
 
 if [ $# -lt 1 ]
 then
