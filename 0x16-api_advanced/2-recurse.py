@@ -14,7 +14,7 @@ def recurse(subreddit, hot_list=[]):
         a list containing the titles of all hot articles for the subreddit
         or None if queried subreddit is invalid """
     global after
-    headers = {'User-Agent': 'xica369'}
+    headers = {'User-Agent': 'youssef2766'}
     url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
     parameters = {'after': after}
     response = requests.get(url, headers=headers, allow_redirects=False,
